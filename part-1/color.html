@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Part 1: My Favorite Color</title>
+  </head>
+  <body>
+    <div id="app">
+      <h1>Favorite Color App</h1>
+
+      <div>
+        <h2>Show me my favorite color</h2>
+        <button>Click me!</button>
+      </div>
+
+      <div>
+        <h2>Change my favorite color</h2>
+        <label for="change-color">Change color:</label>
+        <input id="change-color" type="text" />
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+      const app = new Vue({
+        el: '#app',
+        data: {
+          favoriteColor: 'blue'
+        }
+      })
+    </script>
+  </body>
+</html>
