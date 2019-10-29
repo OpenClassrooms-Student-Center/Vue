@@ -19,9 +19,9 @@
       </p>
       <<<<<<< HEAD ======= >>>>>>> feature: Add scaffold for exercise
       <h2>Contact Us</h2>
-      <p>Address: 9274 Beurre Ave, Paris, France</p>
-      <p>Phone: +08 88 88 88 88 88</p>
-      <p>Email: hello@cafewithavue.bakery</p>
+      <p>Address: {{ address }}</p>
+      <p>Phone: {{ phone }}</p>
+      <p>Email: {{ email }}</p>
       <p>Hours:</p>
       <ul>
         <li>M-F: 06:00 to 16:00</li>
@@ -39,7 +39,17 @@
       const app = new Vue({
         el: '#app',
         data: {
-          restaurantName: 'French Bakery'
+          address: '9274 Beurre Ave, Paris, France',
+          email: 'hello@cafewithavue.bakery',
+          phone: '+08 88 88 88 88 88',
+          restaurantName: 'Cafe with A Vue'
+        },
+        computed: {
+          copyright() {
+            const currentYear = new Date().getFullYear()
+
+            return `Copyright ${this.restaurantName} ${currentYear}`
+          }
         }
       })
     </script>
