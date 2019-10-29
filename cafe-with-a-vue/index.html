@@ -18,19 +18,25 @@
       </p>
 
       <h2>Menu</h2>
-      <div>
-        <h3>Item Name</h3>
-        <img src="" alt="" />
-        <p>In Stock</p>
-        <p>Out of Stock</p>
+      <div v-for="item in simpleMenu" :key="item.name">
+        <h3>{{ item.name }}</h3>
+        <img :src="item.image.source" :alt="item.image.alt" />
+        <p v-if="item.inStock">In Stock</p>
+        <p v-else>Out of Stock</p>
         <div>
-          <label for="add-item-quantity">Quantity:</label>
-          <input id="add-item-quantity" type="number" />
-          <button>Add to Shopping Cart</button>
+          <label for="add-item-quantity">Quantity: {{ item.quantity }}</label>
+          <input
+            v-model.number="item.quantity"
+            id="add-item-quantity"
+            type="number"
+          />
+          <button @click="addToShoppingCart(item.quantity)">
+            Add to Shopping Cart
+          </button>
         </div>
       </div>
 
-      <h2>Shopping Cart: 0 items</h2>
+      <h2>Shopping Cart: {{ shoppingCart }} items</h2>
 
       <h2>Contact Us</h2>
       <p>Address: {{ address }}</p>
@@ -54,6 +60,7 @@
           email: 'hello@cafewithavue.bakery',
           phone: '+08 88 88 88 88 88',
           restaurantName: 'Cafe with A Vue',
+          shoppingCart: 0,
           simpleMenu: [
             {
               name: 'Crossiant',
@@ -62,7 +69,7 @@
                 alt: 'A crossiant'
               },
               inStock: true,
-              quantity: 0
+              quantity: 1
             },
             {
               name: 'French Baguette',
@@ -71,7 +78,7 @@
                 alt: 'Four French Baguettes'
               },
               inStock: true,
-              quantity: 0
+              quantity: 1
             },
             {
               name: 'Éclair',
@@ -80,7 +87,7 @@
                 alt: 'Chocolate Éclair'
               },
               inStock: false,
-              quantity: 0
+              quantity: 1
             }
           ]
         },
@@ -89,6 +96,11 @@
             const currentYear = new Date().getFullYear()
 
             return `Copyright ${this.restaurantName} ${currentYear}`
+          }
+        },
+        methods: {
+          addToShoppingCart(amount) {
+            this.shoppingCart += amount
           }
         }
       })
