@@ -18,6 +18,24 @@
         everyone can't get enough!
       </p>
 
+      <section class="menu">
+        <h2>Menu</h2>
+        <div class="menu-item">
+          <img
+            class="menu-item__image"
+            src="https://via.placeholder.com/300x150"
+            alt=""
+          />
+          <div>
+            <h3>Item Name</h3>
+            <p>In Stock</p>
+            <p>Out of Stock</p>
+          </div>
+        </div>
+      </section>
+
+      <h2>Shopping Cart: 0 items</h2>
+
       <h2>Contact Us</h2>
       <p>Address: {{ address }}</p>
       <p>Phone: {{ phone }}</p>
@@ -42,7 +60,33 @@
           address: '9274 Beurre Ave, Paris, France',
           email: 'hello@cafewithavue.bakery',
           phone: '+08 88 88 88 88 88',
-          restaurantName: 'Cafe with A Vue'
+          restaurantName: 'Cafe with A Vue',
+          simpleMenu: [
+            {
+              name: 'Crossiant',
+              image: {
+                source: './images/crossiant.jpg',
+                alt: 'A crossiant'
+              },
+              inStock: true
+            },
+            {
+              name: 'French Baguette',
+              image: {
+                source: './images/french-baguette.jpeg',
+                alt: 'Four French Baguettes'
+              },
+              inStock: true
+            },
+            {
+              name: 'Éclair',
+              image: {
+                source: './images/eclair.jpg',
+                alt: 'Chocolate Éclair'
+              },
+              inStock: false
+            }
+          ]
         },
         computed: {
           copyright() {
