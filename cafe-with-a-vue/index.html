@@ -7,16 +7,26 @@
     <title>Cafe with a Vue</title>
   </head>
   <body>
-    <div>
-      <h1>French Bakery</h1>
+    <div id="app">
+      <h1>{{ restaurantName }}</h1>
       <p>
-        Welcome to French Bakery! We are known for our freshly baked bread and
-        french pastries! Give you morning a warm start or treat yourself in the
-        middle of the day. Our butter is imported from local farmers in France.
-        Once you take your first bite, you will see why everyone can't get
-        enough!
+        Welcome to {{ restaurantName }}! We are known for our freshly baked
+        bread and french pastries! Give you morning a warm start or treat
+        yourself in the middle of the day. Our butter is imported from local
+        farmers in France. Once you take your first bite, you will see why
+        everyone can't get enough!
       </p>
-      <footer>Copyright French Bakery 2019</footer>
+      <footer>Copyright {{ restaurantName }} 2019</footer>
     </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+      const app = new Vue({
+        el: '#app',
+        data: {
+          restaurantName: 'French Bakery'
+        }
+      })
+    </script>
   </body>
 </html>
