@@ -10,9 +10,9 @@ export default {
     <img class="menu-item__image" :src="image.source" :alt="image.alt" />
     <div>
       <h3>{{ name }}</h3>
+      <p>Price: {{ price }}</p>
       <p v-if="inStock">In Stock</p>
       <p v-else>Out of Stock</p>
-      <p>Price: {{ price }}</p>
       <div>
         <label for="add-item-quantity">Quantity: {{ quantity }}</label>
         <input v-model.number="quantity" id="add-item-quantity" type="number" />
