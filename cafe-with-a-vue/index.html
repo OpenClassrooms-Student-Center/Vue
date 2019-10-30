@@ -8,9 +8,9 @@
     <title>Cafe with a Vue</title>
   </head>
   <body>
-    <div id="app">
+    <div id="app" class="app">
       <h1>{{ restaurantName }}</h1>
-      <p>
+      <p class="description">
         Welcome to {{ restaurantName }}! We are known for our freshly baked
         bread and french pastries! Give you morning a warm start or treat
         yourself in the middle of the day. Our butter is imported from local
@@ -18,26 +18,38 @@
         everyone can't get enough!
       </p>
 
-      <h2>Menu</h2>
-      <div v-for="item in simpleMenu" :key="item.name">
-        <h3>{{ item.name }}</h3>
-        <img :src="item.image.source" :alt="item.image.alt" />
-        <p v-if="item.inStock">In Stock</p>
-        <p v-else>Out of Stock</p>
-        <div>
-          <label for="add-item-quantity">Quantity: {{ item.quantity }}</label>
-          <input
-            v-model.number="item.quantity"
-            id="add-item-quantity"
-            type="number"
+      <section class="menu">
+        <h2>Menu</h2>
+        <div v-for="item in simpleMenu" :key="item.name" class="menu-item">
+          <img
+            class="menu-item__image"
+            :src="item.image.source"
+            :alt="item.image.alt"
           />
-          <button @click="addToShoppingCart(item.quantity)">
-            Add to Shopping Cart
-          </button>
+          <div>
+            <h3>{{ item.name }}</h3>
+            <p v-if="item.inStock">In Stock</p>
+            <p v-else>Out of Stock</p>
+            <div>
+              <label for="add-item-quantity"
+                >Quantity: {{ item.quantity }}</label
+              >
+              <input
+                v-model.number="item.quantity"
+                id="add-item-quantity"
+                type="number"
+              />
+              <button @click="addToShoppingCart(item.quantity)">
+                Add to Shopping Cart
+              </button>
+            </div>
+          </div>
         </div>
-      </div>
+      </section>
 
-      <h2>Shopping Cart: {{ shoppingCart }} items</h2>
+      <aside class="shopping-cart">
+        <h2>Shopping Cart: {{ shoppingCart }} items</h2>
+      </aside>
 
       <h2>Contact Us</h2>
       <p>Address: {{ address }}</p>
@@ -49,7 +61,9 @@
         <li>Saturday: 07:00 to 14:00</li>
         <li>Sunday: 07:00 to 12:00</li>
       </ul>
-      <footer>{{ copyright }}</footer>
+      <footer class="footer">
+        <p>{{ copyright }}</p>
+      </footer>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
