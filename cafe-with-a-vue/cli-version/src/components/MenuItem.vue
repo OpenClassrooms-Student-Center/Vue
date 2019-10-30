@@ -27,8 +27,17 @@ export default {
 </script>
 
 <template>
+<<<<<<< HEAD
   <div class="menu-item">
     <img class="menu-item__image" :src="image.source" :alt="image.alt" />
+=======
+  <div>
+    <h3>{{ name }}</h3>
+    <img :src="image.source" :alt="image.alt" />
+    <p>Price: {{ generatedPrice }} <span v-if="onSale">(10% off!)</span></p>
+    <p v-if="inStock">In Stock</p>
+    <p v-else>Out of Stock</p>
+>>>>>>> feature: Add onSale text
     <div>
       <h3>{{ name }}</h3>
       <p>Price: {{ generatedPrice }}</p>
