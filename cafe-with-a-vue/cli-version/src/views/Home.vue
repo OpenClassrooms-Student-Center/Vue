@@ -1,7 +1,7 @@
 <template>
   <div>
     <h1>{{ restaurantName }}</h1>
-    <p>
+    <p class="description">
       Welcome to {{ restaurantName }}! We are known for our freshly baked bread
       and french pastries! Give you morning a warm start or treat yourself in
       the middle of the day. Our butter is imported from local farmers in
@@ -9,19 +9,23 @@
       enough!
     </p>
 
-    <h2>Menu</h2>
-    <MenuItem
-      v-for="item in simpleMenu"
-      :addToShoppingCart="addToShoppingCart"
-      :name="item.name"
-      :image="item.image"
-      :price="item.price"
-      :quantity="item.quantity"
-      :inStock="item.inStock"
-      :key="item.name"
-    />
+    <section class="menu">
+      <h2>Menu</h2>
+      <MenuItem
+        v-for="item in simpleMenu"
+        :addToShoppingCart="addToShoppingCart"
+        :name="item.name"
+        :image="item.image"
+        :price="item.price"
+        :quantity="item.quantity"
+        :inStock="item.inStock"
+        :key="item.name"
+      />
+    </section>
 
-    <h2>Shopping Cart: {{ shoppingCart }} items</h2>
+    <div class="shopping-cart">
+      <h2>Shopping Cart: {{ shoppingCart }} items</h2>
+    </div>
 
     <footer>{{ copyright }}</footer>
   </div>
