@@ -27,7 +27,9 @@
       <h2>Shopping Cart: {{ shoppingCart }} items</h2>
     </div>
 
-    <footer>{{ copyright }}</footer>
+    <footer class="footer">
+      <p>{{ copyright }}</p>
+    </footer>
   </div>
 </template>
 
@@ -97,6 +99,11 @@ export default {
   max-width: 960px;
   font-size: 1.2rem;
   margin: 0 auto;
+}
+
+.footer {
+  font-style: italic;
+  text-align: center;
 }
 
 .menu {
