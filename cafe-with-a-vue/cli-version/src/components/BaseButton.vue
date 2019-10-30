@@ -1,13 +1,12 @@
 <script>
 export default {
-  name: 'BaseButton',
-  props: ['text']
+  name: 'BaseButton'
 }
 </script>
 
 <template>
   <button>
-    {{ text }}
+    <slot></slot>
   </button>
 </template>
 
