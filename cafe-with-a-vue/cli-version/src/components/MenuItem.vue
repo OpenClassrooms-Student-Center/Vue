@@ -1,4 +1,5 @@
 <script>
+import { mapActions } from 'vuex'
 import BaseButton from './BaseButton.vue'
 
 export default {
@@ -43,9 +44,7 @@ export default {
     }
   },
   methods: {
-    updateShoppingCart(quantity) {
-      this.$emit('add-items-to-cart', quantity)
-    }
+    ...mapActions(['updateShoppingCart'])
   },
   beforeMount() {
     const today = new Date().getDate()
@@ -68,7 +67,7 @@ export default {
       <div>
         <label for="add-item-quantity">Quantity: {{ quantity }}</label>
         <input v-model.number="quantity" id="add-item-quantity" type="number" />
-        <BaseButton @click="updateShoppingCart(quantity)">
+        <BaseButton @click="updateShoppingCart(quantity)" class="test">
           Add to shopping cart
         </BaseButton>
       </div>
