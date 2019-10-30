@@ -91,3 +91,24 @@ export default {
   }
 }
 </script>
+
+<style lang="scss">
+.description {
+  max-width: 960px;
+  font-size: 1.2rem;
+  margin: 0 auto;
+}
+
+.menu {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.shopping-cart {
+  position: absolute;
+  right: 30px;
+  top: 0;
+}
+</style>
