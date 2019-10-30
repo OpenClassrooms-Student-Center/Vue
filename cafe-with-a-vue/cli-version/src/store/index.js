@@ -40,6 +40,13 @@ export default new Vuex.Store({
       }
     ]
   },
+  getters: {
+    copyright: state => {
+      const currentYear = new Date().getFullYear()
+
+      return `Copyright ${state.restaurantName} ${currentYear}`
+    }
+  },
   mutations: {},
   actions: {},
   modules: {}

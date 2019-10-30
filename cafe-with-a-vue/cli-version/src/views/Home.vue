@@ -33,7 +33,7 @@
 
 <script>
 import MenuItem from '../components/MenuItem'
-import { mapState } from 'vuex'
+import { mapGetters, mapState } from 'vuex'
 
 export default {
   name: 'Home',
@@ -41,11 +41,9 @@ export default {
     MenuItem
   },
   computed: {
-    copyright() {
-      const currentYear = new Date().getFullYear()
-
-      return `Copyright ${this.restaurantName} ${currentYear}`
-    },
+    ...mapGetters({
+      copyright: 'copyright'
+    }),
     ...mapState({
       restaurantName: 'restaurantName',
       shoppingCart: 'shoppingCart',
