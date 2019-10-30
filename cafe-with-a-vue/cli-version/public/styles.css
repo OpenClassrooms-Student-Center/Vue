@@ -4,6 +4,11 @@
   margin: 0 auto;
 }
 
+.footer {
+  text-align: center;
+  font-style: italic;
+}
+
 .menu {
   display: flex;
   flex-direction: column;
