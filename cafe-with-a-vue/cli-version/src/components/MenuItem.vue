@@ -1,7 +1,7 @@
 <script>
 export default {
   name: 'MenuItem',
-  props: ['addToShoppingCart', 'image', 'inStock', 'name', 'quantity']
+  props: ['addToShoppingCart', 'image', 'inStock', 'name', 'price', 'quantity']
 }
 </script>
 
@@ -9,6 +9,7 @@ export default {
   <div>
     <h3>{{ name }}</h3>
     <img :src="image.source" :alt="image.alt" />
+    <p>Price: {{ price }}</p>
     <p v-if="inStock">In Stock</p>
     <p v-else>Out of Stock</p>
     <div>
