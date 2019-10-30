@@ -1,7 +1,7 @@
 <template>
-  <div>
+  <div id="app" class="app">
     <h1>{{ restaurantName }}</h1>
-    <p>
+    <p class="description">
       Welcome to {{ restaurantName }}! We are known for our freshly baked bread
       and french pastries! Give you morning a warm start or treat yourself in
       the middle of the day. Our butter is imported from local farmers in
@@ -9,20 +9,26 @@
       enough!
     </p>
 
-    <h2>Menu</h2>
-    <MenuItem
-      v-for="item in simpleMenu"
-      :addToShoppingCart="addToShoppingCart"
-      :name="item.name"
-      :image="item.image"
-      :quantity="item.quantity"
-      :inStock="item.inStock"
-      :key="item.name"
-    />
+    <section class="menu">
+      <h2>Menu</h2>
+      <MenuItem
+        v-for="item in simpleMenu"
+        :addToShoppingCart="addToShoppingCart"
+        :name="item.name"
+        :image="item.image"
+        :quantity="item.quantity"
+        :inStock="item.inStock"
+        :key="item.name"
+      />
+    </section>
 
-    <h2>Shopping Cart: {{ shoppingCart }} items</h2>
+    <aside class="shopping-cart">
+      <h2>Shopping Cart: {{ shoppingCart }} items</h2>
+    </aside>
 
-    <footer>{{ copyright }}</footer>
+    <footer class="footer">
+      <p>{{ copyright }}</p>
+    </footer>
   </div>
 </template>
 
