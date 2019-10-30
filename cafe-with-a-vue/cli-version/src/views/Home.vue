@@ -101,6 +101,11 @@ export default {
   margin: 0 auto;
 }
 
+.footer {
+  font-style: italic;
+  text-align: center;
+}
+
 .menu {
   display: flex;
   flex-direction: column;
