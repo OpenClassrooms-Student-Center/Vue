@@ -27,7 +27,9 @@
       <h2>Shopping Cart: {{ shoppingCart }} items</h2>
     </div>
 
-    <footer>{{ copyright }}</footer>
+    <footer class="footer">
+      <p>{{ copyright }}</p>
+    </footer>
   </div>
 </template>
 
