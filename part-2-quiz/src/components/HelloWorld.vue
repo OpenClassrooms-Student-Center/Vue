@@ -88,13 +88,12 @@
 </template>
 
 <script>
+import Counter from './Counter'
+
 export default {
   name: 'HelloWorld',
   data: {
     title: 'OpenClassrooms - Part 2 Quiz'
-  },
-  components: {
-    Counter
   }
 }
 </script>
