@@ -1,6 +1,7 @@
 <template>
   <div class="hello">
     <h1>{{ title }}</h1>
+    <Counter />
     <p>
       For a guide and recipes on how to configure / customize this project,<br />
       check out the
@@ -91,6 +92,9 @@ export default {
   name: 'HelloWorld',
   data: {
     title: 'OpenClassrooms - Part 2 Quiz'
+  },
+  components: {
+    Counter
   }
 }
 </script>
