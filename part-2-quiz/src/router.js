@@ -21,7 +21,7 @@ export default new Router({
         import(/* webpackChunkName: "about" */ './views/About.vue')
     },
     {
-      path: '/user/:name',
+      path: '/user/name',
       name: 'user',
       component: () => import('./views/User.vue')
     }
