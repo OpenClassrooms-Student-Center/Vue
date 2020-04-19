@@ -1,5 +1,5 @@
 <template>
-  <div class="login">
-    <h1>This is the login page</h1>
-  </div>
+	<div class="login">
+		<h1>Voici la page login</h1>
+	</div>
 </template>
