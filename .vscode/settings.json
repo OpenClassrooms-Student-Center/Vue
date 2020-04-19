@@ -1,0 +1,12 @@
+{
+    "editor.wordWrap": "on",
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true,
+    "editor.suggest.showClasses": false,
+    "editor.suggest.showConstructors": false,
+    "prettier.semi": false,
+    "prettier.jsxSingleQuote": true,
+    "prettier.trailingComma": "none",
+    "prettier.singleQuote": true,
+    "prettier.packageManager": "yarn"
+}

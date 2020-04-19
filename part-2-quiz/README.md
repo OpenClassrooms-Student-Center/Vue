@@ -1,21 +1,21 @@
-# Section 2 Quiz
+# Quiz de la Section 2
 
-This contains the required code for [Quiz 2](https://openclassrooms.com/en/courses/5664336-create-a-web-application-with-vue-js/exercises/3714).
+Vous trouverez ici le code nécessaire pour faire le quiz de la section 2 du cours Vue.js.
 
-## Getting Setup
+## Pour commencer
 
-To debug your code, run the following commands in your terminal:
+Pour débuguer le code, exécutez les commandes suivantes dans votre terminal :
 
 ```bash
-# Clone repo
+# Clonez le repo
 git clone git@github.com:OpenClassrooms-Student-Center/Vue.git
 
-# Change into part-2-quiz directory
+# Changez de repository pour part-2-quiz
 cd part-2-quiz
 
-# Install dependencies
+# Installez les dependencies
 yarn install
 
-# Start local web server
+# Démarrez un serveur web local
 yarn run serve
 ```
