@@ -92,12 +92,12 @@
 </template>
 
 <script>
-import Counter from './Counter'
+import Counter from "./Counter"
 
 export default {
-	name: 'HelloWorld',
+	name: "HelloWorld",
 	data: {
-		title: 'OpenClassrooms - Quiz de la section 2'
+		title: "OpenClassrooms - Quiz de la section 2"
 	}
 }
 </script>
