@@ -1,124 +1,123 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <link rel="stylesheet" href="./styles.css" />
-    <title>Cafe with a Vue</title>
-  </head>
-  <body>
-    <div id="app" class="app">
-      <h1>{{ restaurantName }}</h1>
-      <p class="description">
-        Welcome to {{ restaurantName }}! We are known for our freshly baked
-        bread and french pastries! Give you morning a warm start or treat
-        yourself in the middle of the day. Our butter is imported from local
-        farmers in France. Once you take your first bite, you will see why
-        everyone can't get enough!
-      </p>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<link rel="stylesheet" href="./styles.css" />
+		<title>Cafe with a Vue</title>
+	</head>
+	<body>
+		<div id="app" class="app">
+			<h1>{{ restaurantName }}</h1>
+			<p class="description">
+				Bienvenue dans notre café {{ restaurantName }}! Nous sommes réputés pour
+				notre pain et nos merveilleuses pâtisseries. Faites vous plaisir dès le
+				matin ou avec un goûter réconfortant. Mais attention, vous verrez qu'il
+				est difficile de s'arrêter.
+			</p>
 
-      <section class="menu">
-        <h2>Menu</h2>
-        <div v-for="item in simpleMenu" :key="item.name" class="menu-item">
-          <img
-            class="menu-item__image"
-            :src="item.image.source"
-            :alt="item.image.alt"
-          />
-          <div>
-            <h3>{{ item.name }}</h3>
-            <p v-if="item.inStock">In Stock</p>
-            <p v-else>Out of Stock</p>
-            <div>
-              <label for="add-item-quantity"
-                >Quantity: {{ item.quantity }}</label
-              >
-              <input
-                v-model.number="item.quantity"
-                id="add-item-quantity"
-                type="number"
-              />
-              <button @click="addToShoppingCart(item.quantity)">
-                Add to Shopping Cart
-              </button>
-            </div>
-          </div>
-        </div>
-      </section>
+			<section class="menu">
+				<h2>Menu</h2>
+				<div v-for="item in simpleMenu" :key="item.name" class="menu-item">
+					<img
+						class="menu-item__image"
+						:src="item.image.source"
+						:alt="item.image.alt"
+					/>
+					<div>
+						<h3>{{ item.name }}</h3>
+						<p v-if="item.inStock">En stock</p>
+						<p v-else>En rupture de stock</p>
+						<div>
+							<label for="add-item-quantity"
+								>Quantité : {{ item.quantity }}</label
+							>
+							<input
+								v-model.number="item.quantity"
+								id="add-item-quantity"
+								type="number"
+							/>
+							<button @click="addToShoppingCart(item.quantity)">
+								Ajouter au panier d'achat
+							</button>
+						</div>
+					</div>
+				</div>
+			</section>
 
-      <aside class="shopping-cart">
-        <h2>Shopping Cart: {{ shoppingCart }} items</h2>
-      </aside>
+			<aside class="shopping-cart">
+				<h2>Panier d'achat : {{ shoppingCart }} articles</h2>
+			</aside>
 
-      <h2>Contact Us</h2>
-      <p>Address: {{ address }}</p>
-      <p>Phone: {{ phone }}</p>
-      <p>Email: {{ email }}</p>
-      <p>Hours:</p>
-      <ul>
-        <li>M-F: 06:00 to 16:00</li>
-        <li>Saturday: 07:00 to 14:00</li>
-        <li>Sunday: 07:00 to 12:00</li>
-      </ul>
-      <footer class="footer">
-        <p>{{ copyright }}</p>
-      </footer>
-    </div>
+			<h2>Contactez nous</h2>
+			<p>Adresse : {{ address }}</p>
+			<p>Téléphone : {{ phone }}</p>
+			<p>Email : {{ email }}</p>
+			<p>Horaires :</p>
+			<ul>
+				<li>L-V: 06:00 à 16:00</li>
+				<li>Samedi: 07:00 à 14:00</li>
+				<li>Dimanche: 07:00 à 12:00</li>
+			</ul>
+			<footer class="footer">
+				<p>{{ copyright }}</p>
+			</footer>
+		</div>
 
-    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-    <script>
-      const app = new Vue({
-        el: '#app',
-        data: {
-          address: '9274 Beurre Ave, Paris, France',
-          email: 'hello@cafewithavue.bakery',
-          phone: '+08 88 88 88 88 88',
-          restaurantName: 'Cafe with A Vue',
-          shoppingCart: 0,
-          simpleMenu: [
-            {
-              name: 'Crossiant',
-              image: {
-                source: './images/crossiant.jpg',
-                alt: 'A crossiant'
-              },
-              inStock: true,
-              quantity: 1
-            },
-            {
-              name: 'French Baguette',
-              image: {
-                source: './images/french-baguette.jpeg',
-                alt: 'Four French Baguettes'
-              },
-              inStock: true,
-              quantity: 1
-            },
-            {
-              name: 'Éclair',
-              image: {
-                source: './images/eclair.jpg',
-                alt: 'Chocolate Éclair'
-              },
-              inStock: false,
-              quantity: 1
-            }
-          ]
-        },
-        computed: {
-          copyright() {
-            const currentYear = new Date().getFullYear()
+		<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+		<script>
+			const app = new Vue({
+				el: "#app",
+				data: {
+					address: "9274 Beurre Ave, Paris, France",
+					email: "hello@cafewithavue.bakery",
+					phone: "+08 88 88 88 88 88",
+					restaurantName: "Cafe with A Vue",
+					shoppingCart: 0,
+					simpleMenu: [
+						{
+							name: "Croissant",
+							image: {
+								source: "./images/crossiant.jpg",
+								alt: "Un croissant"
+							},
+							inStock: true,
+							quantity: 1
+						},
+						{
+							name: "Baguette de pain",
+							image: {
+								source: "./images/french-baguette.jpeg",
+								alt: "Quatre baguettes de pain"
+							},
+							inStock: true,
+							quantity: 1
+						},
+						{
+							name: "Éclair",
+							image: {
+								source: "./images/eclair.jpg",
+								alt: "Éclair au chocolat"
+							},
+							inStock: false,
+							quantity: 1
+						}
+					]
+				},
+				computed: {
+					copyright() {
+						const currentYear = new Date().getFullYear()
 
-            return `Copyright ${this.restaurantName} ${currentYear}`
-          }
-        },
-        methods: {
-          addToShoppingCart(amount) {
-            this.shoppingCart += amount
-          }
-        }
-      })
-    </script>
-  </body>
+						return `Copyright ${this.restaurantName} ${currentYear}`
+					}
+				},
+				methods: {
+					addToShoppingCart(amount) {
+						this.shoppingCart += amount
+					}
+				}
+			})
+		</script>
+	</body>
 </html>
